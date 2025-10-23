@@ -3,6 +3,7 @@ using UnityEngine;
 public class Player_Movement : MonoBehaviour
 {
     public Rigidbody2D myRigidbody;
+    public Animator myAnimator;
     public float movespeed;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -16,18 +17,18 @@ public class Player_Movement : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.UpArrow) == true)
         {
             myRigidbody.linearVelocityY = movespeed;
+            myAnimator.SetTrigger("Jump");
         }
-        if (Input.GetKeyDown(KeyCode.LeftArrow) == true)
+        if (Input.GetKey(KeyCode.LeftArrow) == true)
         {
             myRigidbody.linearVelocityX = -movespeed;
         }
-        if (Input.GetKeyDown(KeyCode.RightArrow) == true)
+        if (Input.GetKey(KeyCode.RightArrow) == true)
         {
             myRigidbody.linearVelocityX = movespeed;
         }
-        if (Input.GetKeyDown(KeyCode.DownArrow) == true)
-        {
-            myRigidbody.linearVelocityY = -movespeed;
-        }
+        
+
+        myAnimator.SetFloat("X velocity", myRigidbody.linearVelocityX);
     }
 }
