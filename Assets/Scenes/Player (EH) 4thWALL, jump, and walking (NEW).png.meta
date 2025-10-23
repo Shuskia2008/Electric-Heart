@@ -1,22 +1,22 @@
 fileFormatVersion: 2
-guid: 1e26dbde7de45d147a5190f03a136226
+guid: ebfe65fdbb244b249b08c65c1849e5da
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -4930024566687784118
-    second: Player (EH) 4thWALL, jump, and walking_0
+      213: -4211155748830536335
+    second: Player (EH) 4thWALL, jump, and walking (NEW)_0
   - first:
-      213: 3398373473303692992
-    second: Player (EH) 4thWALL, jump, and walking_1
+      213: 9093733064481034679
+    second: Player (EH) 4thWALL, jump, and walking (NEW)_1
   - first:
-      213: -6103908264767664988
-    second: Player (EH) 4thWALL, jump, and walking_2
+      213: 2939045514216545324
+    second: Player (EH) 4thWALL, jump, and walking (NEW)_2
   - first:
-      213: -3473372614904125126
-    second: Player (EH) 4thWALL, jump, and walking_3
+      213: 8686902549793126916
+    second: Player (EH) 4thWALL, jump, and walking (NEW)_3
   - first:
-      213: 1087828835873262109
-    second: Player (EH) 4thWALL, jump, and walking_4
+      213: 541554119995168000
+    second: Player (EH) 4thWALL, jump, and walking (NEW)_4
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -138,7 +138,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Player (EH) 4thWALL, jump, and walking_0
+      name: Player (EH) 4thWALL, jump, and walking (NEW)_0
       rect:
         serializedVersion: 2
         x: 0
@@ -153,14 +153,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: a4320a8e6c8059bb0800000000000000
-      internalID: -4930024566687784118
+      spriteID: 17d9c197828fe85c0800000000000000
+      internalID: -4211155748830536335
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player (EH) 4thWALL, jump, and walking_1
+      name: Player (EH) 4thWALL, jump, and walking (NEW)_1
       rect:
         serializedVersion: 2
         x: 16
@@ -175,14 +175,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 0c6806a2ba2792f20800000000000000
-      internalID: 3398373473303692992
+      spriteID: 7b1dd9e9a0e633e70800000000000000
+      internalID: 9093733064481034679
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player (EH) 4thWALL, jump, and walking_2
+      name: Player (EH) 4thWALL, jump, and walking (NEW)_2
       rect:
         serializedVersion: 2
         x: 32
@@ -197,14 +197,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 4acc3f8e5cf8a4ba0800000000000000
-      internalID: -6103908264767664988
+      spriteID: c2c159dc25699c820800000000000000
+      internalID: 2939045514216545324
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player (EH) 4thWALL, jump, and walking_3
+      name: Player (EH) 4thWALL, jump, and walking (NEW)_3
       rect:
         serializedVersion: 2
         x: 48
@@ -219,18 +219,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: a39e11c620a1ccfc0800000000000000
-      internalID: -3473372614904125126
+      spriteID: 40abad608d31e8870800000000000000
+      internalID: 8686902549793126916
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player (EH) 4thWALL, jump, and walking_4
+      name: Player (EH) 4thWALL, jump, and walking (NEW)_4
       rect:
         serializedVersion: 2
-        x: 0
-        y: 48
+        x: 64
+        y: 64
         width: 16
         height: 16
       alignment: 0
@@ -241,14 +241,36 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: d1a07aa009eb81f00800000000000000
-      internalID: 1087828835873262109
+      spriteID: 00516f45a9cf38700800000000000000
+      internalID: 541554119995168000
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player (EH) 4thWALL, jump, and walking_5
+      name: Player (EH) 4thWALL, jump, and walking (NEW)_5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 48
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 93aa6a64dc6d1214f9bd188705d34ddb
+      internalID: -175325189
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player (EH) 4thWALL, jump, and walking (NEW)_6
       rect:
         serializedVersion: 2
         x: 16
@@ -263,14 +285,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ff30052d066f7c14c92d2c023a04d3be
-      internalID: -1781558324
+      spriteID: c6d208a6e8366b14f940aad3c277b94e
+      internalID: 723213181
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player (EH) 4thWALL, jump, and walking_6
+      name: Player (EH) 4thWALL, jump, and walking (NEW)_7
       rect:
         serializedVersion: 2
         x: 32
@@ -285,14 +307,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2299f86f73db889478b21aaadb417da6
-      internalID: -2068874005
+      spriteID: 789a25b004ceff244b7402a21171bfad
+      internalID: -1811695874
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player (EH) 4thWALL, jump, and walking_7
+      name: Player (EH) 4thWALL, jump, and walking (NEW)_8
       rect:
         serializedVersion: 2
         x: 48
@@ -307,14 +329,36 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6cabd5c3a31d93049ae128d9017d7988
-      internalID: 498196793
+      spriteID: 5216268b9214a884f9f9d41b680fa2b8
+      internalID: 1734964941
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player (EH) 4thWALL, jump, and walking_8
+      name: Player (EH) 4thWALL, jump, and walking (NEW)_9
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 48
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6139bc1bbbe2b5643a5eac4cdc8b158c
+      internalID: -2088603241
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player (EH) 4thWALL, jump, and walking (NEW)_10
       rect:
         serializedVersion: 2
         x: 0
@@ -329,14 +373,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7463191c6c1e53844bd2f7ae6d8fb3ac
-      internalID: 797705983
+      spriteID: 7a1d64e1b985dfa498d77a0bb33398ad
+      internalID: 1547993070
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player (EH) 4thWALL, jump, and walking_9
+      name: Player (EH) 4thWALL, jump, and walking (NEW)_11
       rect:
         serializedVersion: 2
         x: 16
@@ -351,14 +395,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d40f3f7075c516245a2767db7b8d7adb
-      internalID: -399864688
+      spriteID: f990c9038a0227444b561815068d9c06
+      internalID: 1870423471
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player (EH) 4thWALL, jump, and walking_10
+      name: Player (EH) 4thWALL, jump, and walking (NEW)_12
       rect:
         serializedVersion: 2
         x: 32
@@ -373,14 +417,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3fad29e0685cbae48941378296e450b3
-      internalID: 1996768680
+      spriteID: b072069bf5048894cba5b93735337807
+      internalID: -1284597777
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player (EH) 4thWALL, jump, and walking_11
+      name: Player (EH) 4thWALL, jump, and walking (NEW)_13
       rect:
         serializedVersion: 2
         x: 48
@@ -395,14 +439,36 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 061f2ec5e84095b46956097656bfee4b
-      internalID: -1882358427
+      spriteID: d20470e1a4d32a2458de3b675e074ac5
+      internalID: -1870593569
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player (EH) 4thWALL, jump, and walking_12
+      name: Player (EH) 4thWALL, jump, and walking (NEW)_14
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dbbaf4f49035db4488d7462e4d970eab
+      internalID: 1333970860
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player (EH) 4thWALL, jump, and walking (NEW)_15
       rect:
         serializedVersion: 2
         x: 0
@@ -417,14 +483,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8d284d2b0ad373d47938aa300eb26a40
-      internalID: -1419235517
+      spriteID: b9f3c70575b1eb24f88315f3a5134550
+      internalID: -1253563551
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player (EH) 4thWALL, jump, and walking_13
+      name: Player (EH) 4thWALL, jump, and walking (NEW)_16
       rect:
         serializedVersion: 2
         x: 16
@@ -439,14 +505,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 214ad5b0eba5496418ecf2c444987395
-      internalID: -692681787
+      spriteID: 925d6df14de12374d955356d641e1adb
+      internalID: 817602134
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player (EH) 4thWALL, jump, and walking_14
+      name: Player (EH) 4thWALL, jump, and walking (NEW)_17
       rect:
         serializedVersion: 2
         x: 32
@@ -461,14 +527,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a4b2687104dfe0f489531a2f162ae70c
-      internalID: 1939890555
+      spriteID: 7514c18b189b3e64280198c068e978bd
+      internalID: -206411802
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player (EH) 4thWALL, jump, and walking_15
+      name: Player (EH) 4thWALL, jump, and walking (NEW)_18
       rect:
         serializedVersion: 2
         x: 48
@@ -483,14 +549,36 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1d600a70bdc625043afd5e5a6c8d69ec
-      internalID: -699088241
+      spriteID: 8932d05457df7064486092e68e1b6c9e
+      internalID: 1207404257
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player (EH) 4thWALL, jump, and walking_16
+      name: Player (EH) 4thWALL, jump, and walking (NEW)_19
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f24908ce33174e46b04e31e9de52190
+      internalID: 1133311236
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player (EH) 4thWALL, jump, and walking (NEW)_20
       rect:
         serializedVersion: 2
         x: 0
@@ -505,74 +593,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 996fe9f3dcdbf474f9989eddbfbd072a
-      internalID: -1730951568
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Player (EH) 4thWALL, jump, and walking_17
-      rect:
-        serializedVersion: 2
-        x: 16
-        y: 0
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6b07a871f4f69e747806ea23bb9b6983
-      internalID: 20113865
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Player (EH) 4thWALL, jump, and walking_18
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 0
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 58f5c0cf41e981e4085342e716cb337d
-      internalID: -822339332
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Player (EH) 4thWALL, jump, and walking_19
-      rect:
-        serializedVersion: 2
-        x: 48
-        y: 0
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e03d3294df7800e43b080c969a429f95
-      internalID: -1604990619
+      spriteID: 9be5205bf9e496b41b1d542c046bf9ee
+      internalID: 380024679
       vertices: []
       indices: 
       edges: []
@@ -581,7 +603,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 90fa51910cdf4d6429c1ce433ac5fa62
+    spriteID: ec98a2fa3d10dda499e070271007a864
     internalID: 0
     vertices: []
     indices: 
@@ -591,26 +613,27 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Player (EH) 4thWALL, jump, and walking_0: -4930024566687784118
-      Player (EH) 4thWALL, jump, and walking_1: 3398373473303692992
-      Player (EH) 4thWALL, jump, and walking_10: 1996768680
-      Player (EH) 4thWALL, jump, and walking_11: -1882358427
-      Player (EH) 4thWALL, jump, and walking_12: -1419235517
-      Player (EH) 4thWALL, jump, and walking_13: -692681787
-      Player (EH) 4thWALL, jump, and walking_14: 1939890555
-      Player (EH) 4thWALL, jump, and walking_15: -699088241
-      Player (EH) 4thWALL, jump, and walking_16: -1730951568
-      Player (EH) 4thWALL, jump, and walking_17: 20113865
-      Player (EH) 4thWALL, jump, and walking_18: -822339332
-      Player (EH) 4thWALL, jump, and walking_19: -1604990619
-      Player (EH) 4thWALL, jump, and walking_2: -6103908264767664988
-      Player (EH) 4thWALL, jump, and walking_3: -3473372614904125126
-      Player (EH) 4thWALL, jump, and walking_4: 1087828835873262109
-      Player (EH) 4thWALL, jump, and walking_5: -1781558324
-      Player (EH) 4thWALL, jump, and walking_6: -2068874005
-      Player (EH) 4thWALL, jump, and walking_7: 498196793
-      Player (EH) 4thWALL, jump, and walking_8: 797705983
-      Player (EH) 4thWALL, jump, and walking_9: -399864688
+      Player (EH) 4thWALL, jump, and walking (NEW)_0: -4211155748830536335
+      Player (EH) 4thWALL, jump, and walking (NEW)_1: 9093733064481034679
+      Player (EH) 4thWALL, jump, and walking (NEW)_10: 1547993070
+      Player (EH) 4thWALL, jump, and walking (NEW)_11: 1870423471
+      Player (EH) 4thWALL, jump, and walking (NEW)_12: -1284597777
+      Player (EH) 4thWALL, jump, and walking (NEW)_13: -1870593569
+      Player (EH) 4thWALL, jump, and walking (NEW)_14: 1333970860
+      Player (EH) 4thWALL, jump, and walking (NEW)_15: -1253563551
+      Player (EH) 4thWALL, jump, and walking (NEW)_16: 817602134
+      Player (EH) 4thWALL, jump, and walking (NEW)_17: -206411802
+      Player (EH) 4thWALL, jump, and walking (NEW)_18: 1207404257
+      Player (EH) 4thWALL, jump, and walking (NEW)_19: 1133311236
+      Player (EH) 4thWALL, jump, and walking (NEW)_2: 2939045514216545324
+      Player (EH) 4thWALL, jump, and walking (NEW)_20: 380024679
+      Player (EH) 4thWALL, jump, and walking (NEW)_3: 8686902549793126916
+      Player (EH) 4thWALL, jump, and walking (NEW)_4: 541554119995168000
+      Player (EH) 4thWALL, jump, and walking (NEW)_5: -175325189
+      Player (EH) 4thWALL, jump, and walking (NEW)_6: 723213181
+      Player (EH) 4thWALL, jump, and walking (NEW)_7: -1811695874
+      Player (EH) 4thWALL, jump, and walking (NEW)_8: 1734964941
+      Player (EH) 4thWALL, jump, and walking (NEW)_9: -2088603241
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
