@@ -5,6 +5,8 @@ public class Player_Movement : MonoBehaviour
     public Rigidbody2D myRigidbody;
     public Animator myAnimator;
     public float movespeed;
+    public float jumpForce;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -16,7 +18,7 @@ public class Player_Movement : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.UpArrow) == true)
         {
-            myRigidbody.linearVelocityY = movespeed;
+            myRigidbody.linearVelocityY = jumpForce;
             myAnimator.SetTrigger("Jump");
         }
         if (Input.GetKey(KeyCode.LeftArrow) == true)
