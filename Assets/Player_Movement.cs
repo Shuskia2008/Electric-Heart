@@ -16,7 +16,7 @@ public class Player_Movement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.UpArrow) == true)
+        if (Input.GetKeyDown(KeyCode.UpArrow) == true && GetComponentInChildren<GroundChecker>().GroundDetection == true)
         {
             myRigidbody.linearVelocityY = jumpForce;
             myAnimator.SetTrigger("Jump");
@@ -30,7 +30,8 @@ public class Player_Movement : MonoBehaviour
             myRigidbody.linearVelocityX = movespeed;
         }
         
-
         myAnimator.SetFloat("X velocity", myRigidbody.linearVelocityX);
+
+        Quaternion newQ = Quaternion.Euler(0, 0, 90);
     }
 }
