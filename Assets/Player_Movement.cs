@@ -7,6 +7,9 @@ public class Player_Movement : MonoBehaviour
     public float movespeed;
     public float jumpForce;
     public float walljumpForce;
+    public WallChecker l;
+    public WallChecker r;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -21,22 +24,29 @@ public class Player_Movement : MonoBehaviour
             myRigidbody.linearVelocityY = jumpForce;
             myAnimator.SetTrigger("Jump");
         }
-        if (Input.GetKeyDown(KeyCode.UpArrow) == true && GetComponentInChildren<GroundChecker>().GroundDetection == false && (GetComponentInChildren<WallChecker>().WallDetection == true || GetComponentInChildren<WallChecker>().WallDetection == true))
+        if (Input.GetKeyDown(KeyCode.UpArrow) == true && GetComponentInChildren<GroundChecker>().GroundDetection == false && (l.WallDetection == true || r.WallDetection == true))
         {
             myRigidbody.linearVelocityY = walljumpForce;
             myAnimator.SetTrigger("Jump");
         }
-        if (Input.GetKey(KeyCode.LeftArrow) == true && GetComponentInChildren<WallChecker>().WallDetection == false)
+        if (Input.GetKey(KeyCode.LeftArrow) == true && l.WallDetection == false)
         {
             myRigidbody.linearVelocityX = -movespeed;
         }
-        if (Input.GetKey(KeyCode.RightArrow) == true && GetComponentInChildren<WallChecker>().WallDetection == false)
+        if (Input.GetKey(KeyCode.RightArrow) == true && r.WallDetection == false)
         {
             myRigidbody.linearVelocityX = movespeed;
         }
-        
+        if (Input.GetKeyDown(KeyCode.UpArrow) == true && l.WallDetection == true)
+        {
+            myRigidbody.linearVelocityX = movespeed;
+        }
+        if (Input.GetKeyDown(KeyCode.UpArrow) == true && r.WallDetection == true)
+        {
+            myRigidbody.linearVelocityX = -movespeed;
+        }
+
         myAnimator.SetFloat("X velocity", myRigidbody.linearVelocityX);
 
-        //Quaternion newQ = Quaternion.Euler(0, 0, 90);
     }
 }
