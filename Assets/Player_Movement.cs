@@ -6,7 +6,7 @@ public class Player_Movement : MonoBehaviour
     public Animator myAnimator;
     public float movespeed;
     public float jumpForce;
-
+    public float walljumpForce;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -21,17 +21,22 @@ public class Player_Movement : MonoBehaviour
             myRigidbody.linearVelocityY = jumpForce;
             myAnimator.SetTrigger("Jump");
         }
-        if (Input.GetKey(KeyCode.LeftArrow) == true)
+        if (Input.GetKeyDown(KeyCode.UpArrow) == true && GetComponentInChildren<GroundChecker>().GroundDetection == false && (GetComponentInChildren<WallChecker>().WallDetection == true || GetComponentInChildren<WallChecker>().WallDetection == true))
+        {
+            myRigidbody.linearVelocityY = walljumpForce;
+            myAnimator.SetTrigger("Jump");
+        }
+        if (Input.GetKey(KeyCode.LeftArrow) == true && GetComponentInChildren<WallChecker>().WallDetection == false)
         {
             myRigidbody.linearVelocityX = -movespeed;
         }
-        if (Input.GetKey(KeyCode.RightArrow) == true)
+        if (Input.GetKey(KeyCode.RightArrow) == true && GetComponentInChildren<WallChecker>().WallDetection == false)
         {
             myRigidbody.linearVelocityX = movespeed;
         }
         
         myAnimator.SetFloat("X velocity", myRigidbody.linearVelocityX);
 
-        Quaternion newQ = Quaternion.Euler(0, 0, 90);
+        //Quaternion newQ = Quaternion.Euler(0, 0, 90);
     }
 }
