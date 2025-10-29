@@ -1,3 +1,4 @@
+using Unity.Android.Gradle.Manifest;
 using UnityEngine;
 
 public class Player_Movement : MonoBehaviour
@@ -9,16 +10,18 @@ public class Player_Movement : MonoBehaviour
     public float walljumpForce;
     public WallChecker l;
     public WallChecker r;
-
+    public float Timer;
+    public bool hasTouchedGrass = false;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        Timer = 10;
     }
 
     // Update is called once per frame
     void Update()
     {
+        Timer = Timer + Time.deltaTime;
         if (Input.GetKeyDown(KeyCode.UpArrow) == true && GetComponentInChildren<GroundChecker>().GroundDetection == true)
         {
             myRigidbody.linearVelocityY = jumpForce;
@@ -45,6 +48,40 @@ public class Player_Movement : MonoBehaviour
         {
             myRigidbody.linearVelocityX = -movespeed;
         }
+
+        /*if ((r.WallDetection == true || l.WallDetection == true) && hasTouchedGrass == true)
+        {
+            myRigidbody.gravityScale = 0;
+            Timer = 0;
+            hasTouchedGrass = false;
+        }
+        if (Timer > 0.3f)
+        {
+            myRigidbody.gravityScale = 5;
+        }
+        */
+        if (r.WallDetection == true && Input.GetKey(KeyCode.RightArrow) && hasTouchedGrass == true)
+        {
+            Timer = 0;
+            hasTouchedGrass = false;
+            myRigidbody.gravityScale = 0;
+        }
+        if (l.WallDetection == true && Input.GetKey(KeyCode.LeftArrow) && hasTouchedGrass == true)
+        {
+            Timer = 0;
+            hasTouchedGrass = false;
+            myRigidbody.gravityScale = 0;
+        }
+        if (Timer > 0.3f)
+        {
+            myRigidbody.gravityScale = 5;
+            hasTouchedGrass = true;
+        }
+        if (hasTouchedGrass = false && (Input.GetKeyDown(KeyCode.LeftArrow) == true || Input.GetKeyDown(KeyCode.LeftArrow) == true || Input.GetKeyDown(KeyCode.LeftArrow) == true || Input.GetKeyDown(KeyCode.LeftArrow) == true))
+        {
+            myRigidbody.gravityScale = 5;
+            hasTouchedGrass = true;
+        }
         //transform.position += new Vector3(myRigidbody.linearVelocityX * Time.deltaTime, myRigidbody.linearVelocityY * Time.deltaTime, 0);
 
         //float acceleration = 1f;
@@ -54,6 +91,15 @@ public class Player_Movement : MonoBehaviour
         //speed += acceleration * Time.deltaTime * 0.5f;
 
         myAnimator.SetFloat("X velocity", myRigidbody.linearVelocityX);
+
+        //transform.position += new Vector3(myRigidbody.linearVelocityX * Time.deltaTime, myRigidbody.linearVelocityY * Time.deltaTime, 0);
+    }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("ground"))
+        {
+            hasTouchedGrass = true;
+        }
 
     }
 }
