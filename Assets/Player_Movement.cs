@@ -45,6 +45,13 @@ public class Player_Movement : MonoBehaviour
         {
             myRigidbody.linearVelocityX = -movespeed;
         }
+        //transform.position += new Vector3(myRigidbody.linearVelocityX * Time.deltaTime, myRigidbody.linearVelocityY * Time.deltaTime, 0);
+
+        //float acceleration = 1f;
+        //float speed = 0f;
+        //speed += acceleration * Time.deltaTime * 0.5f;
+        //transform.position += Vector3.right * speed * Time.deltaTime;
+        //speed += acceleration * Time.deltaTime * 0.5f;
 
         myAnimator.SetFloat("X velocity", myRigidbody.linearVelocityX);
 
