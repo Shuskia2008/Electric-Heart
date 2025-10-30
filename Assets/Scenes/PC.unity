@@ -482,8 +482,10 @@ MonoBehaviour:
   walljumpForce: 25
   l: {fileID: 1853650728}
   r: {fileID: 841674789}
-  Timer: 0
   hasTouchedGrass: 0
+  ClingTimer: 0
+  LMoveDisabled: 0
+  RMoveDisabled: 0
 --- !u!50 &221410805
 Rigidbody2D:
   serializedVersion: 5
@@ -2507,7 +2509,7 @@ GameObject:
   - component: {fileID: 1745167525}
   m_Layer: 0
   m_Name: MidGround
-  m_TagString: Untagged
+  m_TagString: ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2562,7 +2564,7 @@ CompositeCollider2D:
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
-  m_GeometryType: 0
+  m_GeometryType: 1
   m_GenerationType: 0
   m_EdgeRadius: 0
   m_ColliderPaths:
