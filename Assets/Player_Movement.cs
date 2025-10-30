@@ -1,4 +1,3 @@
-using Unity.Android.Gradle.Manifest;
 using UnityEngine;
 
 public class Player_Movement : MonoBehaviour
@@ -40,11 +39,11 @@ public class Player_Movement : MonoBehaviour
         {
             myRigidbody.linearVelocityX = movespeed;
         }
-        if (Input.GetKeyDown(KeyCode.UpArrow) == true && l.WallDetection == true)
+        if (Input.GetKeyDown(KeyCode.UpArrow) == true && l.WallDetection == true && GetComponentInChildren<GroundChecker>().GroundDetection == false)
         {
             myRigidbody.linearVelocityX = movespeed;
         }
-        if (Input.GetKeyDown(KeyCode.UpArrow) == true && r.WallDetection == true)
+        if (Input.GetKeyDown(KeyCode.UpArrow) == true && r.WallDetection == true && GetComponentInChildren<GroundChecker>().GroundDetection == false)
         {
             myRigidbody.linearVelocityX = -movespeed;
         }
