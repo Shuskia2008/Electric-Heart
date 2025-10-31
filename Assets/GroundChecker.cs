@@ -21,6 +21,7 @@ public class GroundChecker : MonoBehaviour
         if (collision.gameObject.CompareTag("ground"))
         {
              GroundDetection = true;
+            Debug.Log("Grounded");
         }
         
     }
