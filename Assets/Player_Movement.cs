@@ -74,7 +74,7 @@ public class Player_Movement : MonoBehaviour
             //NOTHING
         }
         //Wall Jump Clinging -TIMER-FINISH-UNCLINGING
-        if (ClingTimer > 2f)
+        if (ClingTimer > 0.3f)
         {
             myRigidbody.gravityScale = 5;
             
@@ -84,11 +84,15 @@ public class Player_Movement : MonoBehaviour
             myRigidbody.gravityScale = 5;
             
         }
-        if ((l.WallDetection == true) && (Input.GetKeyUp(KeyCode.LeftArrow) == true) && (Input.GetKeyUp(KeyCode.UpArrow) == true) && (hasTouchedGrass == false) && (GetComponentInChildren<GroundChecker>().GroundDetection == false))
+        if ((l.WallDetection == true) && (Input.GetKeyUp(KeyCode.LeftArrow) == true) && (hasTouchedGrass == false) && (GetComponentInChildren<GroundChecker>().GroundDetection == false))
         {
             UnclingTimer = 0;
         }
-        if (UnclingTimer > 0.3f)
+        if ((r.WallDetection == true) && (Input.GetKeyUp(KeyCode.RightArrow) == true) && (hasTouchedGrass == false) && (GetComponentInChildren<GroundChecker>().GroundDetection == false))
+        {
+            UnclingTimer = 0;
+        }
+        if (UnclingTimer < 0.3f)
         {
         myRigidbody.gravityScale = 5;
         }
