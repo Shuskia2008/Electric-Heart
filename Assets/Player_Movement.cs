@@ -18,6 +18,7 @@ public class Player_Movement : MonoBehaviour
     public float LMoveDisabled;
     public float RMoveDisabled;
     public bool HasDetectedWall = false;
+    public float MoveDisableTime;
 
     //THE_WALL_JUMP_SYSTEM
 
@@ -67,7 +68,7 @@ public class Player_Movement : MonoBehaviour
         {
             LMoveDisabled = 0;
         }
-        if (Input.GetKey(KeyCode.LeftArrow) == true && LMoveDisabled < 0.5f)
+        if (Input.GetKey(KeyCode.LeftArrow) == true && LMoveDisabled < MoveDisableTime)
         {
             //NOTHING
         }
@@ -76,7 +77,7 @@ public class Player_Movement : MonoBehaviour
         {
             RMoveDisabled = 0;
         }
-        if (Input.GetKey(KeyCode.RightArrow) == true && RMoveDisabled < 0.5f)
+        if (Input.GetKey(KeyCode.RightArrow) == true && RMoveDisabled < MoveDisableTime)
         {
             //NOTHING
         }
@@ -121,17 +122,17 @@ public class Player_Movement : MonoBehaviour
             HasJumpedTimer = 0;
         }
         //Wall Jump LMove -TIMER-FINISH------------------------------------------------------------------------
-        if (LMoveDisabled > 0.5f)
+        if (LMoveDisabled > MoveDisableTime)
         {
-            if (Input.GetKey(KeyCode.LeftArrow) == true && l.WallDetection == false && LMoveDisabled > 0.5f)
+            if (Input.GetKey(KeyCode.LeftArrow) == true && l.WallDetection == false && LMoveDisabled > MoveDisableTime)
             {
                 myRigidbody.linearVelocityX = -movespeed;
             }
         }
         //Wall Jump RMove -TIMER-FINISH-------------------------------------------------------------------------------
-        if (RMoveDisabled > 0.5f)
+        if (RMoveDisabled > MoveDisableTime)
         {
-            if (Input.GetKey(KeyCode.RightArrow) == true && r.WallDetection == false && RMoveDisabled > 0.5f)
+            if (Input.GetKey(KeyCode.RightArrow) == true && r.WallDetection == false && RMoveDisabled > MoveDisableTime)
             {
                 myRigidbody.linearVelocityX = movespeed;
             }
@@ -169,11 +170,11 @@ public class Player_Movement : MonoBehaviour
         //THE_MOVE_SYSTEM
 
         //Movement
-        if (Input.GetKey(KeyCode.LeftArrow) == true && l.WallDetection == false && LMoveDisabled > 0.5f)
+        if (Input.GetKey(KeyCode.LeftArrow) == true && l.WallDetection == false && LMoveDisabled > MoveDisableTime)
         {
             myRigidbody.linearVelocityX = -movespeed;
         }
-        if (Input.GetKey(KeyCode.RightArrow) == true && r.WallDetection == false && RMoveDisabled > 0.5f)
+        if (Input.GetKey(KeyCode.RightArrow) == true && r.WallDetection == false && RMoveDisabled > MoveDisableTime)
         {
             myRigidbody.linearVelocityX = movespeed;
         }
