@@ -9,16 +9,20 @@ public class Player_Movement : MonoBehaviour
     public float walljumpForce;
     public WallChecker l;
     public WallChecker r;
+    public Non_GroundChecker u;
     public bool hasTouchedGrass = false;
     public float UnclingTimer;
     public float ClingTimer;
+    public float WallDetectionTimer;
+    public float HasJumpedTimer;
     public float LMoveDisabled;
     public float RMoveDisabled;
+    public bool HasDetectedWall = false;
 
-                //THE_WALL_JUMP_SYSTEM
+    //THE_WALL_JUMP_SYSTEM
 
 
-                //---THE_WALL_JUMP_TIME_SYSTEM---
+    //---THE_WALL_JUMP_TIME_SYSTEM---
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -33,6 +37,10 @@ public class Player_Movement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //WallDetection -UPDATE-TIME
+        WallDetectionTimer = WallDetectionTimer + Time.deltaTime;
+        //HasJumped -UPDATE-TIME
+        HasJumpedTimer = HasJumpedTimer + Time.deltaTime;
         //Wall Jump LMove -UPDATE-TIME
         LMoveDisabled = LMoveDisabled + Time.deltaTime;
         //Wall Jump RMove -UPDATE-TIME
@@ -42,21 +50,20 @@ public class Player_Movement : MonoBehaviour
         //Wall Jump Unclinging -UPDATE-TIME
         UnclingTimer = UnclingTimer + Time.deltaTime;
         //Wall Jump Clinging -TIMER-START-RESET
-        if (r.WallDetection == true && Input.GetKey(KeyCode.RightArrow) && hasTouchedGrass == true && GetComponentInChildren<GroundChecker>().GroundDetection == false)
+        if (r.WallDetection == true && u.NonGROUNDDetection == false && Input.GetKey(KeyCode.RightArrow) && hasTouchedGrass == true && GetComponentInChildren<GroundChecker>().GroundDetection == false)
         {
             ClingTimer = 0;
             hasTouchedGrass = false;
             myRigidbody.gravityScale = 0;
-            Debug.Log("Clinging Right");
         }
-        if (l.WallDetection == true && Input.GetKey(KeyCode.LeftArrow) && hasTouchedGrass == true && GetComponentInChildren<GroundChecker>().GroundDetection == false)
+        if (l.WallDetection == true && u.NonGROUNDDetection == false && Input.GetKey(KeyCode.LeftArrow) && hasTouchedGrass == true && GetComponentInChildren<GroundChecker>().GroundDetection == false)
         {
             ClingTimer = 0;
             hasTouchedGrass = false;
             myRigidbody.gravityScale = 0;
         }
         //Wall Jump LMove -TIMER-START-RESET-----------------------------------------------------
-        if ((Input.GetKey(KeyCode.UpArrow) == true || Input.GetKey(KeyCode.Space) == true) && l.WallDetection == true && GetComponentInChildren<GroundChecker>().GroundDetection == false)
+        if ((Input.GetKey(KeyCode.UpArrow) == true || Input.GetKey(KeyCode.Space) == true) && l.WallDetection == true && GetComponentInChildren<GroundChecker>().GroundDetection == false && u.NonGROUNDDetection == false && LMoveDisabled > 0.5f)
         {
             LMoveDisabled = 0;
         }
@@ -65,7 +72,7 @@ public class Player_Movement : MonoBehaviour
             //NOTHING
         }
         //Wall Jump RMove -TIMER-START-RESET-----------------------------------------------------------------
-        if ((Input.GetKey(KeyCode.UpArrow) == true || Input.GetKey(KeyCode.Space) == true) && r.WallDetection == true && GetComponentInChildren<GroundChecker>().GroundDetection == false)
+        if ((Input.GetKey(KeyCode.UpArrow) == true || Input.GetKey(KeyCode.Space) == true) && r.WallDetection == true && GetComponentInChildren<GroundChecker>().GroundDetection == false && u.NonGROUNDDetection == false && RMoveDisabled > 0.5f && (WallDetectionTimer < HasJumpedTimer))
         {
             RMoveDisabled = 0;
         }
@@ -95,6 +102,23 @@ public class Player_Movement : MonoBehaviour
         if (UnclingTimer < 0.3f)
         {
         myRigidbody.gravityScale = 5;
+        }
+        //More Timer Stuff
+        //GroundDetectionTimer
+        if ((l.WallDetection == true || r.WallDetection == true) && HasDetectedWall == false)
+        {
+            WallDetectionTimer = 0;
+            HasDetectedWall = true;
+        }
+        if ((l.WallDetection == false && r.WallDetection == false) && HasDetectedWall == true)
+        {   
+            HasDetectedWall = false;
+        }
+
+        //HasJumpedTimer
+        if ((Input.GetKeyDown(KeyCode.UpArrow) == true || Input.GetKeyDown(KeyCode.Space) == true) && GetComponentInChildren<GroundChecker>().GroundDetection == true && (l.WallDetection == false || r.WallDetection == false))
+        {
+            HasJumpedTimer = 0;
         }
         //Wall Jump LMove -TIMER-FINISH------------------------------------------------------------------------
         if (LMoveDisabled > 0.5f)
@@ -128,7 +152,6 @@ public class Player_Movement : MonoBehaviour
         if ((Input.GetKeyDown(KeyCode.UpArrow) == true || Input.GetKeyDown(KeyCode.Space) == true) && GetComponentInChildren<GroundChecker>().GroundDetection == false && (l.WallDetection == true || r.WallDetection == true))
         {
             myRigidbody.linearVelocityY = walljumpForce;
-            Debug.Log("Wall Jumped");
             myAnimator.SetTrigger("Jump");
             hasTouchedGrass = true;
         }
@@ -136,14 +159,14 @@ public class Player_Movement : MonoBehaviour
                     //THE_JUMP_SYSTEM
 
         //Jump -LIMITER-JUMP
-        if ((Input.GetKeyDown(KeyCode.UpArrow) == true || Input.GetKeyDown(KeyCode.Space) == true) && GetComponentInChildren<GroundChecker>().GroundDetection == true && (l.WallDetection == false || r.WallDetection == false))
+        if ((Input.GetKeyDown(KeyCode.UpArrow) == true || Input.GetKeyDown(KeyCode.Space) == true) && GetComponentInChildren<GroundChecker>().GroundDetection == true && (l.WallDetection == false || r.WallDetection == false) && (WallDetectionTimer > HasJumpedTimer))
         {
             myRigidbody.linearVelocityY = jumpForce;
-            Debug.Log("Jumped");
             myAnimator.SetTrigger("Jump");
+            Debug.Log("JUMP");
         }
-
-                    //THE_MOVE_SYSTEM
+        
+        //THE_MOVE_SYSTEM
 
         //Movement
         if (Input.GetKey(KeyCode.LeftArrow) == true && l.WallDetection == false && LMoveDisabled > 0.5f)
@@ -173,7 +196,6 @@ public class Player_Movement : MonoBehaviour
         if (collision.gameObject.CompareTag("ground") && GetComponentInChildren<GroundChecker>().GroundDetection == true && (l.WallDetection == false && r.WallDetection == false))
         {
             hasTouchedGrass = true;
-            Debug.Log("Landed");
         }
     
     }

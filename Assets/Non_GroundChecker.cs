@@ -1,8 +1,8 @@
 using UnityEngine;
 
-public class GroundChecker : MonoBehaviour
+public class Non_GroundChecker : MonoBehaviour
 {
-    public bool GroundDetection = false;
+    public bool NonGROUNDDetection = false;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -20,13 +20,15 @@ public class GroundChecker : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("ground"))
         {
-             GroundDetection = true;
+            NonGROUNDDetection = true;
+            Debug.Log("CEILLLLLLLIIIIIIINNNNNGGG");
         }
-        
+
     }
 
     private void OnCollisionExit2D(Collision2D collision)
     {
-        GroundDetection = false;
+        NonGROUNDDetection = false;
+        Debug.Log("NOOOOOOOOOOOOOOOOOOO-CEILLLLLLLIIIIIIINNNNNGGG");
     }
 }
