@@ -64,7 +64,7 @@ public class Player_Movement : MonoBehaviour
             myRigidbody.gravityScale = 0;
         }
         //Wall Jump LMove -TIMER-START-RESET-----------------------------------------------------
-        if ((Input.GetKey(KeyCode.UpArrow) == true || Input.GetKey(KeyCode.Space) == true) && l.WallDetection == true && GetComponentInChildren<GroundChecker>().GroundDetection == false && u.NonGROUNDDetection == false && LMoveDisabled > 0.5f)
+        if ((Input.GetKey(KeyCode.UpArrow) == true || Input.GetKey(KeyCode.Space) == true) && l.WallDetection == true && GetComponentInChildren<GroundChecker>().GroundDetection == false && u.NonGROUNDDetection == false && LMoveDisabled > MoveDisableTime && (WallDetectionTimer < HasJumpedTimer))
         {
             LMoveDisabled = 0;
         }
@@ -73,7 +73,7 @@ public class Player_Movement : MonoBehaviour
             //NOTHING
         }
         //Wall Jump RMove -TIMER-START-RESET-----------------------------------------------------------------
-        if ((Input.GetKey(KeyCode.UpArrow) == true || Input.GetKey(KeyCode.Space) == true) && r.WallDetection == true && GetComponentInChildren<GroundChecker>().GroundDetection == false && u.NonGROUNDDetection == false && RMoveDisabled > 0.5f && (WallDetectionTimer < HasJumpedTimer))
+        if ((Input.GetKey(KeyCode.UpArrow) == true || Input.GetKey(KeyCode.Space) == true) && r.WallDetection == true && GetComponentInChildren<GroundChecker>().GroundDetection == false && u.NonGROUNDDetection == false && RMoveDisabled > MoveDisableTime && (WallDetectionTimer < HasJumpedTimer))
         {
             RMoveDisabled = 0;
         }
