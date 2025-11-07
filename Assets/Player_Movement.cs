@@ -200,5 +200,9 @@ public class Player_Movement : MonoBehaviour
         }
     
     }
-    
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        myRigidbody.gravityScale = 5;
+
+    }
 }
