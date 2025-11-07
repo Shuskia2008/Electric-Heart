@@ -38,6 +38,8 @@ public class Player_Movement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (GetComponent<Player_Death>().isDead == false)
+        {
         //WallDetection -UPDATE-TIME
         WallDetectionTimer = WallDetectionTimer + Time.deltaTime;
         //HasJumped -UPDATE-TIME
@@ -85,12 +87,12 @@ public class Player_Movement : MonoBehaviour
         if (ClingTimer > 0.3f)
         {
             myRigidbody.gravityScale = 5;
-            
+
         }
         if (hasTouchedGrass == false && (Input.GetKeyDown(KeyCode.LeftArrow) == true || Input.GetKeyDown(KeyCode.RightArrow) == true || Input.GetKeyDown(KeyCode.UpArrow) == true || Input.GetKeyDown(KeyCode.Space) == true))
         {
             myRigidbody.gravityScale = 5;
-            
+
         }
         if ((l.WallDetection == true) && (Input.GetKeyUp(KeyCode.LeftArrow) == true) && (hasTouchedGrass == false) && (GetComponentInChildren<GroundChecker>().GroundDetection == false))
         {
@@ -102,7 +104,7 @@ public class Player_Movement : MonoBehaviour
         }
         if (UnclingTimer < 0.3f)
         {
-        myRigidbody.gravityScale = 5;
+            myRigidbody.gravityScale = 5;
         }
         //More Timer Stuff
         //GroundDetectionTimer
@@ -112,7 +114,7 @@ public class Player_Movement : MonoBehaviour
             HasDetectedWall = true;
         }
         if ((l.WallDetection == false && r.WallDetection == false) && HasDetectedWall == true)
-        {   
+        {
             HasDetectedWall = false;
         }
 
@@ -157,7 +159,7 @@ public class Player_Movement : MonoBehaviour
             hasTouchedGrass = true;
         }
 
-                    //THE_JUMP_SYSTEM
+        //THE_JUMP_SYSTEM
 
         //Jump -LIMITER-JUMP
         if ((Input.GetKeyDown(KeyCode.UpArrow) == true || Input.GetKeyDown(KeyCode.Space) == true) && GetComponentInChildren<GroundChecker>().GroundDetection == true && (l.WallDetection == false || r.WallDetection == false) && (WallDetectionTimer > HasJumpedTimer))
@@ -166,7 +168,7 @@ public class Player_Movement : MonoBehaviour
             myAnimator.SetTrigger("Jump");
             Debug.Log("JUMP");
         }
-        
+
         //THE_MOVE_SYSTEM
 
         //Movement
@@ -178,7 +180,7 @@ public class Player_Movement : MonoBehaviour
         {
             myRigidbody.linearVelocityX = movespeed;
         }
-        
+
         //transform.position += new Vector3(myRigidbody.linearVelocityX * Time.deltaTime, myRigidbody.linearVelocityY * Time.deltaTime, 0);
 
         //float acceleration = 1f;
@@ -190,6 +192,7 @@ public class Player_Movement : MonoBehaviour
         myAnimator.SetFloat("X velocity", myRigidbody.linearVelocityX);
 
         //transform.position += new Vector3(myRigidbody.linearVelocityX * Time.deltaTime, myRigidbody.linearVelocityY * Time.deltaTime, 0);
+        }
     }
     
     private void OnCollisionEnter2D(Collision2D collision)
