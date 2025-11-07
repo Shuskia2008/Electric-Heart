@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Player_Death : MonoBehaviour
 {
@@ -14,9 +15,11 @@ public class Player_Death : MonoBehaviour
     {
         if (isDead == true)
         {
+            SceneManager.LoadScene("GAME OVER");
             //GAMEOVER_UI
         }
     }
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("deadly"))
