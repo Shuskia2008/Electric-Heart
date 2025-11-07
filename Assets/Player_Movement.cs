@@ -51,13 +51,13 @@ public class Player_Movement : MonoBehaviour
         //Wall Jump Unclinging -UPDATE-TIME
         UnclingTimer = UnclingTimer + Time.deltaTime;
         //Wall Jump Clinging -TIMER-START-RESET
-        if (r.WallDetection == true && u.NonGROUNDDetection == false && Input.GetKey(KeyCode.RightArrow) && hasTouchedGrass == true && GetComponentInChildren<GroundChecker>().GroundDetection == false)
+        if (r.WallDetection == true && u.NonGROUNDDetection == false && Input.GetKey(KeyCode.RightArrow) && hasTouchedGrass == true && GetComponentInChildren<GroundChecker>().GroundDetection == false && (WallDetectionTimer < HasJumpedTimer))
         {
             ClingTimer = 0;
             hasTouchedGrass = false;
             myRigidbody.gravityScale = 0;
         }
-        if (l.WallDetection == true && u.NonGROUNDDetection == false && Input.GetKey(KeyCode.LeftArrow) && hasTouchedGrass == true && GetComponentInChildren<GroundChecker>().GroundDetection == false)
+        if (l.WallDetection == true && u.NonGROUNDDetection == false && Input.GetKey(KeyCode.LeftArrow) && hasTouchedGrass == true && GetComponentInChildren<GroundChecker>().GroundDetection == false && (WallDetectionTimer < HasJumpedTimer))
         {
             ClingTimer = 0;
             hasTouchedGrass = false;
