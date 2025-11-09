@@ -1140,7 +1140,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 834469251}
         m_TargetAssemblyTypeName: GameOverUI, Assembly-CSharp
-        m_MethodName: Continue
+        m_MethodName: Main_Menu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
